@@ -14,7 +14,7 @@ public final class IntArray {
         logger.debug("IntArray created, length={}", this.data.length);
     }
 
-    static IntArray of(int[] arr) { return new IntArray(arr); }
+    public static IntArray of(int[] arr) { return new IntArray(arr); }
 
     public int[] toArray() { return data.clone(); }
 
