@@ -1,0 +1,22 @@
+package test.edge.com.example.arrayapp;
+
+import main.edge.com.example.arrayapp.entity.IntArray;
+import main.edge.com.example.arrayapp.factory.IntArrayFactory;
+import main.edge.com.example.arrayapp.service.StreamArrayService;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+class StreamArrayServiceTest {
+    private final StreamArrayService s = new StreamArrayService();
+
+    @Test void testAverage() {
+        IntArray arr = IntArrayFactory.createFromInts(2,4,6);
+        assertEquals(4.0, s.average(arr), 1e-9);
+    }
+
+    @Test void testCounts() {
+        IntArray arr = IntArrayFactory.createFromInts(2,4,6);
+        assertEquals(3, s.countPositive(arr));
+        assertEquals(0, s.countNegative(arr));
+    }
+}
