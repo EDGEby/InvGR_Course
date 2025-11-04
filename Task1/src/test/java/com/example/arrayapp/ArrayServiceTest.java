@@ -3,13 +3,14 @@ package com.example.arrayapp;
 import com.example.arrayapp.entity.IntArray;
 import com.example.arrayapp.factory.IntArrayFactory;
 import com.example.arrayapp.service.ArrayService;
+import com.example.arrayapp.service.impl.ArrayServiceImpl;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ArrayServiceTest {
-    private final ArrayService service = new ArrayService();
+    private final ArrayService service = new ArrayServiceImpl();
     private final IntArray arr = IntArrayFactory.createFromInts(1, -2, 3, 4);
 
     @Test void testMin() { assertEquals(-2, service.min(arr)); }

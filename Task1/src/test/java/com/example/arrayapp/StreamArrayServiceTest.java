@@ -3,11 +3,12 @@ package com.example.arrayapp;
 import com.example.arrayapp.entity.IntArray;
 import com.example.arrayapp.factory.IntArrayFactory;
 import com.example.arrayapp.service.StreamArrayService;
+import com.example.arrayapp.service.impl.StreamArrayServiceImpl;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class StreamArrayServiceTest {
-    private final StreamArrayService s = new StreamArrayService();
+    private final StreamArrayService s = new StreamArrayServiceImpl();
 
     @Test void testAverage() {
         IntArray arr = IntArrayFactory.createFromInts(2,4,6);
