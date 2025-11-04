@@ -1,4 +1,4 @@
-package java.com.example.arrayapp;
+package com.example.arrayapp;
 
 import com.example.arrayapp.entity.IntArray;
 import com.example.arrayapp.io.FileArrayReader;
