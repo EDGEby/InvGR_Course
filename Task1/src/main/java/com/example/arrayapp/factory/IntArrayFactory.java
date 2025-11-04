@@ -1,7 +1,8 @@
-package main.java.com.example.arrayapp.factory;
+package com.example.arrayapp.factory;
 
 import com.example.arrayapp.entity.IntArray;
 import com.example.arrayapp.exception.ArrayCreationException;
+
 
 public final class IntArrayFactory {
     private IntArrayFactory() {}

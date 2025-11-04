@@ -1,8 +1,9 @@
-package main.java.com.example.arrayapp.entity;
+package com.example.arrayapp.entity;
 
-import java.util.Arrays;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.util.Arrays;
 
 public final class IntArray {
     private static final Logger logger = LogManager.getLogger(IntArray.class);
@@ -13,7 +14,7 @@ public final class IntArray {
         logger.debug("IntArray created, length={}", this.data.length);
     }
 
-    static IntArray of(int[] arr) { return new IntArray(arr); }
+    public static IntArray of(int[] arr) { return new IntArray(arr); }
 
     public int[] toArray() { return data.clone(); }
 

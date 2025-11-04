@@ -1,8 +1,9 @@
-package main.java.com.example.arrayapp.builder;
+package com.example.arrayapp.builder;
 
-import main.java.com.example.arrayapp.entity.IntArray;
+import com.example.arrayapp.entity.IntArray;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class IntArrayBuilder {
     private final List<Integer> list = new ArrayList<>();

@@ -1,4 +1,4 @@
-package main.java.com.example.arrayapp.service;
+package com.example.arrayapp.service;
 
 import com.example.arrayapp.entity.IntArray;
 import java.util.Arrays;

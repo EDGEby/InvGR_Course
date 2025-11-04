@@ -1,6 +1,6 @@
-package main.java.com.example.arrayapp.service;
+package com.example.arrayapp.service;
 
-import main.java.com.example.arrayapp.entity.IntArray;
+import com.example.arrayapp.entity.IntArray;
 import java.util.function.IntPredicate;
 
 public final class ArrayService {
