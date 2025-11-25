@@ -1,0 +1,67 @@
+package com.example.taskport.entity;
+
+import com.example.taskport.state.ShipState;
+import com.example.taskport.state.impl.DepartingState;
+import com.example.taskport.state.impl.WaitingState;
+import com.example.taskport.warehouse.Warehouse;
+
+public class Ship implements Runnable {
+    private final String name;
+    private final Warehouse warehouse;
+    private Berth berth;
+    private int containersCount;
+    private int amountToMove;
+    private int shipCapacity;
+    private ShipState state;
+
+    public Ship(String name, Warehouse warehouse,
+                int containersCount, int amountToMove, int shipCapacity) {
+
+        this.name = name;
+        this.warehouse = warehouse;
+        this.containersCount = containersCount;
+        this.amountToMove = amountToMove;
+        this.shipCapacity = shipCapacity;
+        this.state = new WaitingState();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getContainersCount() {
+        return containersCount;
+    }
+
+    public void setContainersCount(int containersCount) {
+        this.containersCount = containersCount;
+    }
+
+    public int getAmountToMove() {
+        return amountToMove;
+    }
+
+    public Warehouse getWarehouse() {
+        return warehouse;
+    }
+
+    public void setBerth(Berth berth) {
+        this.berth = berth;
+    }
+
+    public Berth getBerth() {
+        return berth;
+    }
+
+    public void setState(ShipState state) {
+        this.state = state;
+    }
+
+    @Override
+    public void run() {
+        while (!(state instanceof DepartingState)) {
+            state.process(this);
+        }
+        state.process(this);
+    }
+}
