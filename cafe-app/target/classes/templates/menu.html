@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head><meta charset="UTF-8"/><title>Menu</title></head>
+<body>
+  <h1>Menu (all)</h1>
+  <ul>
+    <li th:each="item : ${menu}">
+      <span th:text="${item.name}">Name</span> - <span th:text="${item.price}">0</span>
+      <span th:if="${!item.available}"> (not available)</span>
+    </li>
+  </ul>
+</body>
+</html>

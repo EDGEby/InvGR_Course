@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <title th:text="#{app.title}">Cafe</title>
+</head>
+<body>
+  <header>
+    <a href="/?lang=ru">Русский</a> | <a href="/?lang=en">English</a>
+    <div th:if="${session.user != null}">
+      <span th:text="${session.user.fullName}">User</span>
+      <form method="post" action="/logout"><button type="submit">Logout</button></form>
+    </div>
+    <div th:if="${session.user == null}">
+      <a href="/login">Login</a> | <a href="/signup">Sign up</a>
+    </div>
+  </header>
+
+  <main>
+    <h1 th:text="#{menu.title}">Меню</h1>
+    <ul>
+      <li th:each="item : ${menu}">
+        <span th:text="${item.name}">Name</span> -
+        <span th:text="${item.price}">0.00</span>
+      </li>
+    </ul>
+  </main>
+</body>
+</html>
